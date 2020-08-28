@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: '12'
           check-latest: true
+       
+      - run: node --versrion | 
+          npm --version
 
       # Runs a single command using the runners shell
       - name: Install dependencies
