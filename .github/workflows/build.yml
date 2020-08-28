@@ -31,7 +31,7 @@ jobs:
           npm --version
           
       - name: Install rush
-        run: npm install -g rush
+        run: npm install -g @microsoft/rush
 
       # Runs a single command using the runners shell
       - name: Install dependencies
