@@ -26,8 +26,11 @@ jobs:
         with:
           node-version: '12.x'
 
-      - run: node --version | 
+      - run: node --version && | 
           npm --version
+          
+      - name: Install rush
+        run: npm install -g rush
 
       # Runs a single command using the runners shell
       - name: Install dependencies
