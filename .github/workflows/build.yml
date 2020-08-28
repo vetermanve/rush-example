@@ -36,6 +36,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install dependencies
         run: rush install --bypass-policy
+        env:
+         CI: ""
                           
       - name: Build all packages
         run: rush build
