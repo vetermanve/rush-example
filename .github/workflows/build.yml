@@ -26,9 +26,10 @@ jobs:
         with:
           node-version: '12.x'
           
+          
       - name: Install rush
-        run: node common/scripts/install-run-rush.js install
-
+        run: npm install -g @microsoft/rush pnpm
+         
       - name: Configure PNPM
         run: pnpm config set store-dir cache
 
@@ -42,7 +43,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install dependencies
-        run: rush install --bypass-policy
+        run: node common/scripts/install-run-rush.js install --bypass-policy
         env:
          CI: ""
 
