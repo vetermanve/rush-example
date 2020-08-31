@@ -31,7 +31,18 @@ jobs:
           npm --version
           
       - name: Install rush
-        run: npm install -g @microsoft/rush
+        run: npm install -g @microsoft/rush pnpm
+
+      - name: Configure PNPM
+        run: pnpm config set store-dir cache
+
+      - uses: actions/cache@v2
+        id: cache
+        with:
+         path: "cache"
+         key: ${{ runner.os }}-node-pnpm-${{ hashFiles('common/config/rush/pnpm-lock.yaml') }}
+         restore-keys: |
+            ${{ runner.os }}-node-pnpm-
 
       # Runs a single command using the runners shell
       - name: Install dependencies
