@@ -51,4 +51,4 @@ jobs:
         run: pnpm config get store-dir
                           
       - name: Build all packages
-        run: node common/scripts/install-run-rush.js rebuild --verbose --production
+        run: node common/scripts/install-run-rush.js rebuild --verbose
