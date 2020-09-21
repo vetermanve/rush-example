@@ -54,3 +54,4 @@ jobs:
           token: ${{ secrets.SLACK_TOKEN }}
           path: test.txt
           channel: rush-test
+          titile: "This is a test file"
