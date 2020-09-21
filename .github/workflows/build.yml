@@ -46,3 +46,11 @@ jobs:
                           
       - name: Build all packages
         run: node common/scripts/install-run-rush.js rebuild --verbose
+        
+      - run: echo "Test file " > test.txt
+      - name: Upload to slack step
+        uses: adrey/slack-file-upload-action@master
+        with:
+          token: ${{ secrets.SLACK_TOKEN }}
+          path: test.txt
+          channel: rush-test
